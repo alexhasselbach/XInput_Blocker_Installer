@@ -2,7 +2,7 @@
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 
 # Define the source folder containing the DLL files
-$sourceFolder = ".\dlls_x64"
+$sourceFolder = "$PSScriptRoot\dlls_x64"
 
 # Define the destination root folder where the DLLs will be copied
 $destinationRoot = "C:\Program Files\Oculus\Support"
